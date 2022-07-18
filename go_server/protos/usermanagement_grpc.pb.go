@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: protos/usermanagement.proto
 
-package server_client
+package grpc
 
 import (
 	context "context"

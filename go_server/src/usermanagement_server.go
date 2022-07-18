@@ -37,7 +37,7 @@ func main() {
 
 	s := grpc.NewServer()
 	pb.RegisterUserManagementServer(s, &UserManagementServer{})
-	log.Printf("Server listening at %v", lis)
+	log.Printf("Server listening at %v", lis.Addr())
 
 	err = s.Serve(lis)
 	if err != nil {
