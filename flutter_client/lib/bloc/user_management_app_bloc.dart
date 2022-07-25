@@ -20,7 +20,7 @@ class UserManagementAppBloc
       event, Emitter<UserManagementAppState> emit) async {
     try {
       // fake the app startup fetching process
-      await Future.delayed(const Duration(seconds: 3), () {});
+      await Future.delayed(const Duration(seconds: 1), () {});
 
       // log the action
       logger.fine("Entering _appEnterHome");
