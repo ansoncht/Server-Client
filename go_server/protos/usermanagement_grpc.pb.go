@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: protos/usermanagement.proto
 
-package grpc
+package usermanagement
 
 import (
 	context "context"

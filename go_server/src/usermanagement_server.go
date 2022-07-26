@@ -22,11 +22,11 @@ type UserManagementServer struct {
 
 func (s *UserManagementServer) CreateNewUser(ctx context.Context, in *pb.NewUser) (*pb.User, error) {
 	// log received request's name and age
-	log.Printf("Received name: %v age: %v", in.GetName(), in.GetAge())
+	log.Printf("Received name: %v %v age: %v", in.GetFirstName(), in.GetLastName(), in.GetAge())
 	var user_id int32 = int32(rand.Intn(math.MaxInt32))
 
 	// return created user
-	return &pb.User{Name: in.GetName(), Age: in.GetAge(), Id: user_id}, nil
+	return &pb.User{FirstName: in.GetFirstName(), LastName: in.GetLastName(), Age: in.GetAge(), Id: user_id}, nil
 }
 
 func main() {
