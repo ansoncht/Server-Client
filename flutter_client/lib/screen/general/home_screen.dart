@@ -1,11 +1,13 @@
-// HomeScreen is the Home Page of the app
+// HomeScreen is the home page of the app
 
 // imports
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_client/bloc/user_management_app_bloc.dart';
-import 'package:flutter_client/bloc/user_management_app_event.dart';
+
+import 'package:flutter_client/bloc/user_management_nav/user_management_nav_bloc.dart';
+import 'package:flutter_client/bloc/user_management_nav/user_management_nav_event.dart';
+import 'package:flutter_client/screen/add_user/add_user_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   // constructor
@@ -26,8 +28,14 @@ class HomeScreen extends StatelessWidget {
             children: [
               ElevatedButton(
                   onPressed: () => {
-                        BlocProvider.of<UserManagementAppBloc>(context)
-                            .add(UserManagementAppEventClickAddUser())
+                        BlocProvider.of<UserManagementNavBloc>(context)
+                            .add(UserManagementNavEventClickAddUser()),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<Widget>(
+                            builder: ((context) => const AddUserScreen()),
+                          ),
+                        ),
                       },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
@@ -40,8 +48,8 @@ class HomeScreen extends StatelessWidget {
                   )),
               ElevatedButton(
                   onPressed: () => {
-                        BlocProvider.of<UserManagementAppBloc>(context)
-                            .add(UserManagementAppEventClickAddUser())
+                        BlocProvider.of<UserManagementNavBloc>(context)
+                            .add(UserManagementNavEventClickAddUser())
                       },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(

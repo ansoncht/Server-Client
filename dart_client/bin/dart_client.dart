@@ -1,7 +1,6 @@
 import 'package:dart_client/grpc/grpc_client.dart';
 import 'package:dart_client/protos/usermanagement.pbgrpc.dart';
 import 'package:dart_client/utils/logger.dart';
-import 'package:grpc/grpc.dart';
 import 'package:logging/logging.dart';
 
 // port number

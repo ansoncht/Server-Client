@@ -5,8 +5,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_client/bloc/user_management_app_bloc.dart';
-import 'package:flutter_client/bloc/user_management_app_state.dart';
+import 'package:flutter_client/bloc/user_management_nav/user_management_nav_bloc.dart';
+import 'package:flutter_client/bloc/user_management_nav/user_management_nav_state.dart';
 
 class ErrorScreen extends StatelessWidget {
   // constructor
@@ -16,11 +16,17 @@ class ErrorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     try {
       return Center(
-        child: BlocBuilder<UserManagementAppBloc, UserManagementAppState>(
+        child: BlocBuilder<UserManagementNavBloc, UserManagementNavState>(
           builder: (context, state) {
-            return Text(
-              state.error,
-            );
+            return Column(children: [
+              const Icon(
+                Icons.bug_report,
+                size: 200,
+              ),
+              Text(
+                state.error,
+              )
+            ]);
           },
         ),
       );
