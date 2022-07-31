@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_client/bloc/add_user/add_user_bloc.dart';
+import 'package:flutter_client/bloc/get_users/get_users_bloc.dart';
 import 'package:flutter_client/bloc/user_management_nav/user_management_nav_bloc.dart';
 import 'package:flutter_client/bloc/user_management_nav/user_management_nav_event.dart';
 import 'package:flutter_client/navigator/usermanagement_app_navigator.dart';
@@ -27,12 +28,16 @@ class MyApp extends StatelessWidget {
           create: (BuildContext context) =>
               AddUserBloc(createLogger('AddUserBloc')),
         ),
+        BlocProvider<GetUsersBloc>(
+          create: (BuildContext context) =>
+              GetUsersBloc(createLogger('GetUsersBloc')),
+        ),
       ],
       child: MaterialApp(
         title: 'User Management',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: Colors.black,
+            appBarTheme: const AppBarTheme(color: Colors.black)),
         home: const UserManagementAppNavigator(),
       ),
     );

@@ -17,10 +17,10 @@ class UserManagementNavBloc
   UserManagementNavBloc(this.logger) : super(UserManagementNavState.init()) {
     on<UserManagementNavEventClickHome>(_navEnteredHome);
     on<UserManagementNavEventClickAddUser>(_navEnteredAddUser);
-    on<UserManagementNavEventClickUsers>(_navEnteredUsersList);
+    on<UserManagementNavEventClickUsersList>(_navEnteredUsersList);
   }
 
-  Future<void> _navEnteredHome(UserManagementNavEvent event,
+  Future<void> _navEnteredHome(UserManagementNavEventClickHome event,
       Emitter<UserManagementNavState> emit) async {
     try {
       // fake the app startup fetching process
@@ -41,7 +41,7 @@ class UserManagementNavBloc
     }
   }
 
-  Future<void> _navEnteredAddUser(UserManagementNavEvent event,
+  Future<void> _navEnteredAddUser(UserManagementNavEventClickAddUser event,
       Emitter<UserManagementNavState> emit) async {
     try {
       // log the action
@@ -59,7 +59,7 @@ class UserManagementNavBloc
     }
   }
 
-  Future<void> _navEnteredUsersList(UserManagementNavEvent event,
+  Future<void> _navEnteredUsersList(UserManagementNavEventClickUsersList event,
       Emitter<UserManagementNavState> emit) async {
     try {
       // log the action

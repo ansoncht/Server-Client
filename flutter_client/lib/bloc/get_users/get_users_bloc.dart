@@ -3,6 +3,7 @@
 
 // imports
 import 'package:bloc/bloc.dart';
+import 'package:flutter_client/grpc/grpc_service.dart';
 import 'package:flutter_client/protos/usermanagement.pb.dart';
 import 'package:logging/logging.dart';
 
@@ -22,7 +23,9 @@ class GetUsersBloc extends Bloc<GetUsersEvent, GetUsersState> {
     logger.fine('Entering _getUsers');
 
     try {
-      emit(state.gotUsers([]));
+      final UsersList response = await GRPCService.getUsers();
+      final List<User> users = response.users;
+      emit(state.gotUsers(users));
     } on Error catch (e) {
       logger.severe(e.toString());
     }

@@ -10,8 +10,8 @@ abstract class UserManagementNavEvent {}
 // UserManagementAppEventClickHome means the app's home page should be loaded
 class UserManagementNavEventClickHome implements UserManagementNavEvent {}
 
-// UserManagementAppEventClickUsers means list of users page should be loaded
-class UserManagementNavEventClickUsers implements UserManagementNavEvent {}
-
 // UserManagementAppEventClickAddUser means the add user page should be loaded
 class UserManagementNavEventClickAddUser implements UserManagementNavEvent {}
+
+// UserManagementAppEventClickUsers means list of users page should be loaded
+class UserManagementNavEventClickUsersList implements UserManagementNavEvent {}

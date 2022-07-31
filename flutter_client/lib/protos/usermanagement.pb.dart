@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: usermanagement.proto
+//  source: protos/usermanagement.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -171,5 +171,75 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(3);
   @$pb.TagNumber(4)
   void clearId() => clearField(4);
+}
+
+class GetUsersParams extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetUsersParams', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'usermanagement'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  GetUsersParams._() : super();
+  factory GetUsersParams() => create();
+  factory GetUsersParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetUsersParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetUsersParams clone() => GetUsersParams()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetUsersParams copyWith(void Function(GetUsersParams) updates) => super.copyWith((message) => updates(message as GetUsersParams)) as GetUsersParams; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetUsersParams create() => GetUsersParams._();
+  GetUsersParams createEmptyInstance() => create();
+  static $pb.PbList<GetUsersParams> createRepeated() => $pb.PbList<GetUsersParams>();
+  @$core.pragma('dart2js:noInline')
+  static GetUsersParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUsersParams>(create);
+  static GetUsersParams? _defaultInstance;
+}
+
+class UsersList extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UsersList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'usermanagement'), createEmptyInstance: create)
+    ..pc<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..hasRequiredFields = false
+  ;
+
+  UsersList._() : super();
+  factory UsersList({
+    $core.Iterable<User>? users,
+  }) {
+    final _result = create();
+    if (users != null) {
+      _result.users.addAll(users);
+    }
+    return _result;
+  }
+  factory UsersList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UsersList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UsersList clone() => UsersList()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UsersList copyWith(void Function(UsersList) updates) => super.copyWith((message) => updates(message as UsersList)) as UsersList; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UsersList create() => UsersList._();
+  UsersList createEmptyInstance() => create();
+  static $pb.PbList<UsersList> createRepeated() => $pb.PbList<UsersList>();
+  @$core.pragma('dart2js:noInline')
+  static UsersList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UsersList>(create);
+  static UsersList? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<User> get users => $_getList(0);
 }
 

@@ -45,4 +45,22 @@ class GRPCService {
       rethrow;
     }
   }
+
+  static Future<UsersList> getUsers() async {
+    // create channel
+    final channel = createChannel();
+    // create grpc client
+    final client = UserManagementClient(channel);
+
+    // create users
+    try {
+      GetUsersParams request = GetUsersParams();
+      UsersList response = await client.getUsers(request);
+      logger.fine('Received UsersList');
+      return response;
+    } on Error catch (e) {
+      logger.severe(e.toString());
+      rethrow;
+    }
+  }
 }

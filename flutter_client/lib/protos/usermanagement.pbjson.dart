@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: usermanagement.proto
+//  source: protos/usermanagement.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -33,3 +33,20 @@ const User$json = const {
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEh0KCmZpcnN0X25hbWUYASABKAlSCWZpcnN0TmFtZRIbCglsYXN0X25hbWUYAiABKAlSCGxhc3ROYW1lEhAKA2FnZRgDIAEoBVIDYWdlEg4KAmlkGAQgASgFUgJpZA==');
+@$core.Deprecated('Use getUsersParamsDescriptor instead')
+const GetUsersParams$json = const {
+  '1': 'GetUsersParams',
+};
+
+/// Descriptor for `GetUsersParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUsersParamsDescriptor = $convert.base64Decode('Cg5HZXRVc2Vyc1BhcmFtcw==');
+@$core.Deprecated('Use usersListDescriptor instead')
+const UsersList$json = const {
+  '1': 'UsersList',
+  '2': const [
+    const {'1': 'users', '3': 1, '4': 3, '5': 11, '6': '.usermanagement.User', '10': 'users'},
+  ],
+};
+
+/// Descriptor for `UsersList`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List usersListDescriptor = $convert.base64Decode('CglVc2Vyc0xpc3QSKgoFdXNlcnMYASADKAsyFC51c2VybWFuYWdlbWVudC5Vc2VyUgV1c2Vycw==');

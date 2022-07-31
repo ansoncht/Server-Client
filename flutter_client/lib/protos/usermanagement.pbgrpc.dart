@@ -1,6 +1,6 @@
 ///
 //  Generated code. Do not modify.
-//  source: usermanagement.proto
+//  source: protos/usermanagement.proto
 //
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
@@ -18,6 +18,10 @@ class UserManagementClient extends $grpc.Client {
       '/usermanagement.UserManagement/CreateNewUser',
       ($0.NewUser value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.User.fromBuffer(value));
+  static final _$getUsers = $grpc.ClientMethod<$0.GetUsersParams, $0.UsersList>(
+      '/usermanagement.UserManagement/GetUsers',
+      ($0.GetUsersParams value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.UsersList.fromBuffer(value));
 
   UserManagementClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -27,6 +31,11 @@ class UserManagementClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.User> createNewUser($0.NewUser request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createNewUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UsersList> getUsers($0.GetUsersParams request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 }
 
@@ -41,6 +50,13 @@ abstract class UserManagementServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.NewUser.fromBuffer(value),
         ($0.User value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUsersParams, $0.UsersList>(
+        'GetUsers',
+        getUsers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetUsersParams.fromBuffer(value),
+        ($0.UsersList value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.User> createNewUser_Pre(
@@ -48,6 +64,13 @@ abstract class UserManagementServiceBase extends $grpc.Service {
     return createNewUser(call, await request);
   }
 
+  $async.Future<$0.UsersList> getUsers_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.GetUsersParams> request) async {
+    return getUsers(call, await request);
+  }
+
   $async.Future<$0.User> createNewUser(
       $grpc.ServiceCall call, $0.NewUser request);
+  $async.Future<$0.UsersList> getUsers(
+      $grpc.ServiceCall call, $0.GetUsersParams request);
 }

@@ -19,5 +19,5 @@ class GetUsersState extends Equatable {
   GetUsersState gotUsers(List<User> result) => GetUsersState(result: result);
   // redefine props for comparison and testing purposes
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [result];
 }

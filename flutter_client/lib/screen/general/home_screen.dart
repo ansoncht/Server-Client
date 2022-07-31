@@ -4,6 +4,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_client/bloc/get_users/get_users_bloc.dart';
+import 'package:flutter_client/bloc/get_users/get_users_event.dart';
 
 import 'package:flutter_client/bloc/user_management_nav/user_management_nav_bloc.dart';
 import 'package:flutter_client/bloc/user_management_nav/user_management_nav_event.dart';
@@ -49,7 +51,9 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () => {
                         BlocProvider.of<UserManagementNavBloc>(context)
-                            .add(UserManagementNavEventClickUsers())
+                            .add(UserManagementNavEventClickUsersList()),
+                        BlocProvider.of<GetUsersBloc>(context)
+                            .add(GetUsersEventClickGetUsers())
                       },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
