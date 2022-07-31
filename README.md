@@ -1,5 +1,5 @@
 # Go server - Dart client
-This is a mock Golang server and Dart client using gRPC
+This is a mock Golang server and Flutter client using gRPC
 
 Server (Written in Golang): handles all the request through gRPC and give appropriate response
 
