@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () => {
                         BlocProvider.of<UserManagementNavBloc>(context)
-                            .add(UserManagementNavEventClickAddUser())
+                            .add(UserManagementNavEventClickUsers())
                       },
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(

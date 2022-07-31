@@ -118,7 +118,7 @@ class AddUserScreen extends StatelessWidget {
                                                       Navigator.pop(context)
                                                     },
                                                 child: const Text(
-                                                  'Back To Home',
+                                                  'OK',
                                                   style:
                                                       TextStyle(fontSize: 25),
                                                 )),

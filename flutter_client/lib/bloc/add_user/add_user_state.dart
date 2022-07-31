@@ -1,4 +1,4 @@
-// AddUserState holds the add_user's bloc state
+// AddUserState holds the AddUserBloc's bloc state
 
 // imports
 import 'package:equatable/equatable.dart';
@@ -14,6 +14,7 @@ class AddUserState extends Equatable {
   final String age;
   // id
   final String id;
+
   // constructor
   const AddUserState(
       {required this.firstName,
@@ -30,6 +31,7 @@ class AddUserState extends Equatable {
           String firstName, String lastName, String age, String id) =>
       AddUserState(firstName: firstName, lastName: lastName, age: age, id: id);
 
+  // redefine props for comparison and testing purposes
   @override
   List<Object?> get props => [firstName, lastName];
 }

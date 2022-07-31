@@ -1,4 +1,4 @@
-// UserManagementAppState holds the user_management_nav's bloc state
+// UserManagementAppState holds the UserManagementAppBloc's bloc state
 
 // imports
 import 'package:equatable/equatable.dart';
@@ -52,6 +52,7 @@ class UserManagementNavState extends Equatable {
   UserManagementNavState loadFailed(String e) =>
       UserManagementNavState(error: e, state: UserManagementNavStates.error);
 
+  // redefine props for comparison and testing purposes
   @override
   List<Object?> get props => [error, state];
 }

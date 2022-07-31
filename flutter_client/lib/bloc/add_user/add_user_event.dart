@@ -16,6 +16,7 @@ class AddUserEventClickAddUser implements AddUserEvent {
   // age
   final int age;
 
+  // AddUserEventClickAddUser class constructor
   AddUserEventClickAddUser(
       {required this.firstName, required this.lastName, required this.age});
 }

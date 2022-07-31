@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package usermanagement;
 
-option go_package = "example.com/usermanagement;usermanagement";
+option go_package = "github.com/ansoncht/usermanagement;usermanagement";
 
 service UserManagement {
     rpc CreateNewUser (NewUser) returns (User) {}

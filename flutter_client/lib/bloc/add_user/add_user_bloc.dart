@@ -18,7 +18,7 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
     on<AddUserEventClickAddUser>(_addUser);
   }
 
-  Future<User> _addUser(
+  Future<void> _addUser(
       AddUserEventClickAddUser event, Emitter<AddUserState> emit) async {
     logger.fine('Entering _addUser');
     try {
@@ -26,10 +26,8 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
           await GRPCService.addUser(event.firstName, event.lastName, event.age);
       emit(state.addedUser(response.firstName, response.lastName,
           response.age.toString(), response.id.toString()));
-      return response;
     } on Error catch (e) {
       logger.severe(e.toString());
     }
-    return User();
   }
 }

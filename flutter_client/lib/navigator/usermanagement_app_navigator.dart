@@ -11,6 +11,7 @@ import 'package:flutter_client/screen/add_user/add_user_screen.dart';
 import 'package:flutter_client/screen/general/error_screen.dart';
 import 'package:flutter_client/screen/general/home_screen.dart';
 import 'package:flutter_client/screen/general/loading_screen.dart';
+import 'package:flutter_client/screen/users_list/users_list_screen.dart';
 
 class UserManagementAppNavigator extends StatelessWidget {
   // constructor
@@ -34,6 +35,9 @@ class UserManagementAppNavigator extends StatelessWidget {
 
             if (state.state == UserManagementNavStates.addUser)
               const MaterialPage(child: AddUserScreen()),
+
+            if (state.state == UserManagementNavStates.usersList)
+              const MaterialPage(child: UsersListScreen()),
           ],
           onPopPage: (route, result) {
             log('Popped Page');
