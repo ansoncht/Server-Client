@@ -20,6 +20,7 @@ class UserManagementNavBloc
     on<UserManagementNavEventClickUsersList>(_navEnteredUsersList);
   }
 
+  // _navEnteredHome emit a new state to the UI with the correct routing
   Future<void> _navEnteredHome(UserManagementNavEventClickHome event,
       Emitter<UserManagementNavState> emit) async {
     try {
@@ -41,6 +42,7 @@ class UserManagementNavBloc
     }
   }
 
+  // _navEnteredAddUser emit a new state to the UI with the correct routing
   Future<void> _navEnteredAddUser(UserManagementNavEventClickAddUser event,
       Emitter<UserManagementNavState> emit) async {
     try {
@@ -59,6 +61,7 @@ class UserManagementNavBloc
     }
   }
 
+  // _navEnteredUsersList emit a new state to the UI with the correct routing
   Future<void> _navEnteredUsersList(UserManagementNavEventClickUsersList event,
       Emitter<UserManagementNavState> emit) async {
     try {

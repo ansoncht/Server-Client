@@ -38,8 +38,8 @@ class AddUserScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   border: Border.all(color: Colors.blue, width: 5)),
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.8,
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,38 +90,42 @@ class AddUserScreen extends StatelessWidget {
                                             child: Text('User Created')),
                                         content: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
+                                              MainAxisAlignment.end,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Text(
-                                                'First Name: ${state.firstName}'),
-                                            Text(
-                                                'Last Name: ${state.lastName}'),
-                                            Text('Age: ${state.age}'),
-                                            Text('ID: ${state.id}'),
-                                            ElevatedButton(
-                                                style: ButtonStyle(
-                                                    padding:
-                                                        MaterialStateProperty
-                                                            .all<EdgeInsets>(
-                                                                const EdgeInsets
-                                                                    .all(15)),
-                                                    shape: MaterialStateProperty
-                                                        .all(RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        10)))),
-                                                onPressed: () => {
-                                                      // close the pop up
-                                                      Navigator.pop(context)
-                                                    },
-                                                child: const Text(
-                                                  'OK',
-                                                  style:
-                                                      TextStyle(fontSize: 25),
-                                                )),
+                                            const Expanded(
+                                                child: Divider(
+                                              thickness: 5,
+                                              color: Colors.white,
+                                            )),
+                                            Expanded(
+                                                child: Text(
+                                                    'First Name: ${state.firstName}')),
+                                            Expanded(
+                                                child: Text(
+                                                    'Last Name: ${state.lastName}')),
+                                            Expanded(
+                                                child:
+                                                    Text('Age: ${state.age}')),
+                                            Expanded(
+                                                child: ElevatedButton(
+                                                    style: ButtonStyle(
+                                                        shape: MaterialStateProperty.all(
+                                                            RoundedRectangleBorder(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10)))),
+                                                    onPressed: () => {
+                                                          // close the pop up
+                                                          Navigator.pop(context)
+                                                        },
+                                                    child: const Text(
+                                                      'OK',
+                                                      style: TextStyle(
+                                                          fontSize: 25),
+                                                    ))),
                                           ],
                                         ),
                                       );

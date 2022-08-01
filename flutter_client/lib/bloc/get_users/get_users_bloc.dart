@@ -18,16 +18,24 @@ class GetUsersBloc extends Bloc<GetUsersEvent, GetUsersState> {
     on<GetUsersEventClickGetUsers>(_getUsers);
   }
 
+  // _getUsers get a list of users and emit a new state to the UI
   Future<void> _getUsers(
       GetUsersEventClickGetUsers event, Emitter<GetUsersState> emit) async {
+    // log the action
     logger.fine('Entering _getUsers');
 
     try {
+      // make request to the backend server and wait for a response
       final UsersList response = await GRPCService.getUsers();
+      // assign information received to a list
       final List<User> users = response.users;
+      // emit a new state with the list
       emit(state.gotUsers(users));
     } on Error catch (e) {
+      // log the error
       logger.severe(e.toString());
+      // rethrow exception
+      rethrow;
     }
   }
 }

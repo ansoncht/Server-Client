@@ -33,9 +33,11 @@ class UserManagementAppNavigator extends StatelessWidget {
             if (state.state == UserManagementNavStates.error)
               const MaterialPage(child: ErrorScreen()),
 
+            // add user page loaded
             if (state.state == UserManagementNavStates.addUser)
               const MaterialPage(child: AddUserScreen()),
 
+            // get users list page loaded
             if (state.state == UserManagementNavStates.usersList)
               const MaterialPage(child: UsersListScreen()),
           ],

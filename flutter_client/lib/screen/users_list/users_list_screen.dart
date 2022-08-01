@@ -46,7 +46,8 @@ class UsersListScreen extends StatelessWidget {
                   },
                   hoverColor: Colors.grey.shade900,
                 ),
-                separatorBuilder: (context, index) => const Divider(
+                separatorBuilder: (context, index) => Divider(
+                  color: Colors.grey.shade600,
                   thickness: 0.5,
                 ),
               );

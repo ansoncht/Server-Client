@@ -5,11 +5,13 @@ import 'package:logging/logging.dart';
 
 // port number
 const int customPort = 5001;
+const String localHost = 'localhost';
+const String androidHost = '10.0.2.2';
 
 ClientChannel createChannel() {
   // create channel
   final channel = ClientChannel(
-    'localhost',
+    localHost,
     port: customPort,
     options: ChannelOptions(
       credentials: const ChannelCredentials.insecure(),

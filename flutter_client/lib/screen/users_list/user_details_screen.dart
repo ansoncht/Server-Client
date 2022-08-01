@@ -19,23 +19,50 @@ class UserDetailsScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 1.5,
               width: MediaQuery.of(context).size.width - 20,
               child: Card(
-                color: Colors.grey.shade100,
+                color: Colors.grey.shade500,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5)),
                 child: BlocBuilder<GetUsersBloc, GetUsersState>(
                   builder: (context, state) {
                     return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const SizedBox(
                           height: 20,
                         ),
-                        const Icon(
+                        Icon(
                           Icons.face,
-                          size: 60,
+                          size: MediaQuery.of(context).size.height * 0.1,
                           color: Colors.black,
                         ),
-                        Text(state.result[index].firstName),
-                        Text(state.result[index].lastName)
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Name: ${state.result[index].firstName} ${state.result[index].lastName}',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height * 0.05,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'Age: ${state.result[index].age}',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height * 0.05,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'ID: ${state.result[index].id}',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height * 0.05,
+                          ),
+                        ),
                       ],
                     );
                   },

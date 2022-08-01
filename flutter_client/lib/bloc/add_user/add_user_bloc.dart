@@ -18,16 +18,24 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
     on<AddUserEventClickAddUser>(_addUser);
   }
 
+  // _addUser add a user and emit a new state to the UI
   Future<void> _addUser(
       AddUserEventClickAddUser event, Emitter<AddUserState> emit) async {
+    // log the action
     logger.fine('Entering _addUser');
+
     try {
+      // make request to the backend server and wait for a response
       final User response =
           await GRPCService.addUser(event.firstName, event.lastName, event.age);
+      // emit a new state with the information received from the server
       emit(state.addedUser(response.firstName, response.lastName,
           response.age.toString(), response.id.toString()));
     } on Error catch (e) {
+      // log the error
       logger.severe(e.toString());
+      // rethrow exception
+      rethrow;
     }
   }
 }

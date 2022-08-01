@@ -1,0 +1,4 @@
+/.vscode
+/.idea
+
+/go_server/.env

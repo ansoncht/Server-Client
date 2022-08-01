@@ -25,45 +25,52 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
         ),
         body: Center(
-          child: ButtonBar(
-            alignment: MainAxisAlignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                  onPressed: () => {
-                        BlocProvider.of<UserManagementNavBloc>(context)
-                            .add(UserManagementNavEventClickAddUser()),
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute<Widget>(
-                            builder: ((context) => const AddUserScreen()),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: ElevatedButton(
+                    onPressed: () => {
+                          BlocProvider.of<UserManagementNavBloc>(context)
+                              .add(UserManagementNavEventClickAddUser()),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<Widget>(
+                              builder: ((context) => const AddUserScreen()),
+                            ),
                           ),
-                        ),
-                      },
-                  style: ButtonStyle(
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.all(30)),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)))),
-                  child: const Text(
-                    'Add User',
-                    style: TextStyle(fontSize: 30),
-                  )),
-              ElevatedButton(
-                  onPressed: () => {
-                        BlocProvider.of<UserManagementNavBloc>(context)
-                            .add(UserManagementNavEventClickUsersList()),
-                        BlocProvider.of<GetUsersBloc>(context)
-                            .add(GetUsersEventClickGetUsers())
-                      },
-                  style: ButtonStyle(
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.all(30)),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)))),
-                  child: const Text(
-                    'Users List',
-                    style: TextStyle(fontSize: 30),
-                  )),
+                        },
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)))),
+                    child: const Text(
+                      'Add User',
+                      style: TextStyle(fontSize: 30),
+                    )),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: ElevatedButton(
+                    onPressed: () => {
+                          BlocProvider.of<UserManagementNavBloc>(context)
+                              .add(UserManagementNavEventClickUsersList()),
+                          BlocProvider.of<GetUsersBloc>(context)
+                              .add(GetUsersEventClickGetUsers())
+                        },
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)))),
+                    child: const Text(
+                      'Users List',
+                      style: TextStyle(fontSize: 30),
+                    )),
+              )
             ],
           ),
         ),
