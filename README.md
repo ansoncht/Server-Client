@@ -1,9 +1,13 @@
 # Go server - Dart client
-This is a mock Golang server and Flutter client using gRPC
+This is a mock Golang server and Flutter client using gRPC and PostgreSQL
 
 Server (Written in Golang): handles all the request through gRPC and give appropriate response
 
 Client (Written in Flutter / Dart): gives a nicely designed UI for users to input data and interact with
+
+Database (PostgreSQL): holds all the user details received from the clinet and processed by the server
+
+API (gRPC): provides unified agreement for client and server applications to communicate transparently
 
 Work Flow:
 1. User launch the flutter client app
@@ -16,3 +20,4 @@ Technologies Used:
 - Golang: For implementing backend server (Faster execution, concurrency ready for future developements.)
 - gRPC: For enforcing the rules when making Requests and Responses (Faster execution than REST.)
 - bloc (Business Logic Component): For state management in the frontend flutter mobile / web app (Easy to maintain and scalable. Improve codes' quality and seperate logics from user end)
+PostgreSQL: For data storage using relational based database
